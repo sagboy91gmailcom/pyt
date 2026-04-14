@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simplilearn AI and Machine Learning Cheat Sheet</title>
+  <style>
+    :root {
+      --paper: #ffffff;
+      --ink: #111111;
+      --muted: #4d4d4d;
+      --accent: #1b7f89;
+      --accent-soft: #dff1f4;
+      --rule: #d7d7d7;
+      --code-bg: #f5f5f5;
+      --shadow: rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: #ececec;
+      line-height: 1.28;
+      font-size: 12px;
+    }
+
+    .stack {
+      width: max-content;
+      margin: 18px auto 28px;
+      padding: 6px 0 24px;
+    }
+
+    .sheet {
+      width: 11in;
+      min-height: 8.5in;
+      margin: 0 auto 20px;
+      padding: 0.42in 0.5in 0.34in;
+      background: var(--paper);
+      box-shadow: 0 10px 28px var(--shadow);
+      position: relative;
+      page-break-after: always;
+    }
+
+    .sheet-header {
+      margin-bottom: 0.18in;
+    }
+
+    .sheet-brand {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .sheet-title {
+      margin-top: 2px;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--accent);
+    }
+
+    .sheet-body {
+      column-count: 2;
+      column-gap: 0.42in;
+      column-fill: auto;
+    }
+
+    .sheet-body > * {
+      break-inside: avoid;
+    }
+
+    .section-intro {
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 4px;
+    }
+
+    h3 {
+      margin: 8px 0 4px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    h4, h5, h6 {
+      margin: 6px 0 3px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    p {
+      margin: 0 0 7px;
+      orphans: 3;
+      widows: 3;
+    }
+
+    ul, ol {
+      margin: 0 0 8px 17px;
+      padding: 0;
+    }
+
+    li {
+      margin: 0 0 3px;
+    }
+
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 11px;
+      background: var(--code-bg);
+      padding: 1px 4px;
+      border-radius: 3px;
+    }
+
+    pre {
+      margin: 0 0 9px;
+      padding: 8px 10px;
+      background: var(--code-bg);
+      border: 1px solid #e2e2e2;
+      border-radius: 4px;
+      overflow: hidden;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    pre code {
+      padding: 0;
+      background: transparent;
+      border-radius: 0;
+      font-size: 10.5px;
+      line-height: 1.25;
+    }
+
+    .section-rule {
+      border: 0;
+      border-top: 1px solid var(--rule);
+      margin: 9px 0;
+    }
+
+    .sheet-footer {
+      position: absolute;
+      left: 0.5in;
+      right: 0.5in;
+      bottom: 0.16in;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: #666;
+    }
+
+    @media (max-width: 1200px) {
+      .stack {
+        width: auto;
+        margin: 8px;
+      }
+
+      .sheet {
+        width: auto;
+        min-height: 0;
+        padding: 18px 18px 30px;
+      }
+
+      .sheet-body {
+        column-count: 1;
+      }
+    }
+
+    @media print {
+      @page {
+        size: letter landscape;
+        margin: 0;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      .stack {
+        margin: 0;
+        padding: 0;
+      }
+
+      .sheet {
+        width: 11in;
+        min-height: 8.5in;
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stack">
+    
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>How to use this sheet</h2>
+        </div>
+        <ul>
+<li>Read each section like a quick refresher, not like a textbook chapter.</li>
+<li>Focus on the code patterns, formulas, and &quot;when to use&quot; notes.</li>
+<li>Revisit the capstone checklist at the end before assignments or exams.</li>
+</ul>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>1</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Course Roadmap</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Course Roadmap</h2>
+        </div>
+        <h3>Data science workflow</h3>
+<ol>
+<li>Define the problem.</li>
+<li>Collect data.</li>
+<li>Inspect and clean data.</li>
+<li>Explore patterns with statistics and visualization.</li>
+<li>Engineer useful features.</li>
+<li>Train and validate models.</li>
+<li>Interpret results.</li>
+<li>Deploy, monitor, and improve.</li>
+</ol>
+<h3>AI vs ML vs Deep Learning</h3>
+<ul>
+<li>Artificial Intelligence: broader field of building systems that show intelligent behavior.</li>
+<li>Machine Learning: systems learn patterns from data.</li>
+<li>Deep Learning: ML based on multi-layer neural networks.</li>
+</ul>
+<h3>Main Python stack from the course</h3>
+<pre><code>import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns</code></pre>
+<ul>
+<li><code>NumPy</code>: arrays and fast numeric computing</li>
+<li><code>pandas</code>: tables, cleaning, grouping, joins</li>
+<li><code>matplotlib</code> / <code>seaborn</code> / <code>plotly</code>: charts</li>
+<li><code>scikit-learn</code>: ML workflows and evaluation</li>
+<li><code>scipy</code> / <code>statsmodels</code>: statistics and hypothesis tests</li>
+</ul>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>2</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - NumPy</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>NumPy</h2>
+        </div>
+        <h3>What NumPy gives you</h3>
+<ul>
+<li>N-dimensional arrays</li>
+<li>fast vectorized operations</li>
+<li>broadcasting</li>
+<li>indexing and slicing</li>
+<li>math and statistics functions</li>
+</ul>
+<h3>Create arrays</h3>
+<pre><code>import numpy as np
+
+a = np.array([1, 2, 3])
+b = np.array([[1, 2], [3, 4]])
+z = np.zeros((2, 3))
+o = np.ones((3, 3))
+r = np.arange(0, 10, 2)
+l = np.linspace(0, 1, 5)</code></pre>
+<h3>Important attributes</h3>
+<pre><code>b.ndim     # number of dimensions
+b.shape    # rows, columns
+b.size     # total elements
+b.dtype    # data type</code></pre>
+<h3>Common operations</h3>
+<pre><code>a + 10
+a * 2
+a ** 2
+np.sqrt(a)
+np.mean(a)
+np.median(a)
+np.std(a)
+np.sum(a)</code></pre>
+<h3>Indexing and slicing</h3>
+<pre><code>arr = np.array([10, 20, 30, 40, 50])
+arr[0]        # 10
+arr[-1]       # 50
+arr[1:4]      # 20,30,40
+arr[::2]      # step slicing
+
+m = np.array([[1, 2, 3], [4, 5, 6]])
+m[0, 1]       # 2
+m[:, 1]       # second column
+m[1, :]       # second row</code></pre>
+<h3>Reshaping</h3>
+<pre><code>x = np.arange(1, 7)
+x.reshape(2, 3)
+x.flatten()
+x.transpose()</code></pre>
+<h3>Cheat note</h3>
+<ul>
+<li>Use NumPy when data is mostly numeric and shape matters.</li>
+<li>Prefer vectorized operations over Python loops.</li>
+</ul>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>3</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Pandas</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Pandas</h2>
+        </div>
+        <h3>Core data structures</h3>
+<ul>
+<li><code>Series</code>: one-dimensional labeled data</li>
+<li><code>DataFrame</code>: two-dimensional labeled table</li>
+</ul>
+<h3>Create a DataFrame</h3>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    &quot;name&quot;: [&quot;Ana&quot;, &quot;Bob&quot;, &quot;Cara&quot;],
+    &quot;age&quot;: [23, 31, 27],
+    &quot;city&quot;: [&quot;NY&quot;, &quot;LA&quot;, &quot;NY&quot;]
+})</code></pre>
+<h3>First inspection steps</h3>
+<pre><code>df.head()
+df.tail()
+df.shape
+df.columns
+df.info()
+df.describe()
+df.dtypes</code></pre>
+<h3>Selecting data</h3>
+<pre><code>df[&quot;age&quot;]                  # one column
+df[[&quot;name&quot;, &quot;age&quot;]]        # multiple columns
+df.loc[0, &quot;name&quot;]          # label based
+df.iloc[0, 1]              # position based
+df[df[&quot;age&quot;] &gt; 25]         # filtering</code></pre>
+<h3>Sort, rename, drop</h3>
+<pre><code>df.sort_values(&quot;age&quot;, ascending=False)
+df.rename(columns={&quot;age&quot;: &quot;Age&quot;})
+df.drop(columns=[&quot;city&quot;])</code></pre>
+<h3>Missing values</h3>
+<pre><code>df.isna().sum()
+df.dropna()
+df.fillna(0)
+df[&quot;age&quot;].fillna(df[&quot;age&quot;].mean(), inplace=True)</code></pre>
+<h3>Grouping and aggregation</h3>
+<pre><code>df.groupby(&quot;city&quot;)[&quot;age&quot;].mean()
+df.groupby(&quot;city&quot;).agg({&quot;age&quot;: [&quot;mean&quot;, &quot;max&quot;, &quot;count&quot;]})</code></pre>
+<h3>Merge, join, concat</h3>
+<pre><code>pd.concat([df1, df2], axis=0)
+pd.merge(df1, df2, on=&quot;id&quot;, how=&quot;inner&quot;)
+df1.join(df2, how=&quot;left&quot;)</code></pre>
+<h3>Date and time</h3>
+<pre><code>df[&quot;date&quot;] = pd.to_datetime(df[&quot;date&quot;])
+df[&quot;year&quot;] = df[&quot;date&quot;].dt.year
+df[&quot;month&quot;] = df[&quot;date&quot;].dt.month
+df[&quot;day_name&quot;] = df[&quot;date&quot;].dt.day_name()</code></pre>
+<h3>Text data</h3>
+<pre><code>df[&quot;name&quot;].str.lower()
+df[&quot;email&quot;].str.contains(&quot;@gmail.com&quot;)
+df[&quot;text&quot;].str.replace(&quot;old&quot;, &quot;new&quot;)
+df[&quot;full&quot;] = df[&quot;first&quot;] + &quot; &quot; + df[&quot;last&quot;]</code></pre>
+<h3>Cheat note</h3>
+<ul>
+<li><code>loc</code> is label-based.</li>
+<li><code>iloc</code> is integer-position-based.</li>
+<li>In pandas, most cleaning work is column-wise and vectorized.</li>
+</ul>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>4</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Data Visualization</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Data Visualization</h2>
+        </div>
+        <h3>Why visualize</h3>
+<ul>
+<li>detect trends</li>
+<li>compare categories</li>
+<li>spot outliers</li>
+<li>check distributions</li>
+<li>communicate results quickly</li>
+</ul>
+<h3>Matplotlib basics</h3>
+<pre><code>import matplotlib.pyplot as plt
+
+plt.plot(x, y)
+plt.title(&quot;Sales Trend&quot;)
+plt.xlabel(&quot;Month&quot;)
+plt.ylabel(&quot;Sales&quot;)
+plt.show()</code></pre>
+<h3>Common chart choices</h3>
+<ul>
+<li>line plot: trends over time</li>
+<li>bar chart: category comparison</li>
+<li>scatter plot: relationship between two numeric variables</li>
+<li>histogram: distribution of one feature</li>
+<li>box plot: spread, quartiles, outliers</li>
+<li>heatmap: correlation or matrix intensity</li>
+</ul>
+<h3>Seaborn shortcuts</h3>
+<pre><code>sns.lineplot(data=df, x=&quot;month&quot;, y=&quot;sales&quot;)
+sns.barplot(data=df, x=&quot;region&quot;, y=&quot;sales&quot;)
+sns.scatterplot(data=df, x=&quot;total_bill&quot;, y=&quot;tip&quot;, hue=&quot;sex&quot;)
+sns.histplot(data=df, x=&quot;age&quot;, kde=True)
+sns.boxplot(data=df, x=&quot;department&quot;, y=&quot;salary&quot;)
+sns.heatmap(df.corr(numeric_only=True), annot=True, cmap=&quot;Blues&quot;)</code></pre>
+<h3>Plotly use case</h3>
+<ul>
+<li>use when you want interactive charts</li>
+<li>useful for hover details and dashboards</li>
+</ul>
+<pre><code>import plotly.express as px
+fig = px.scatter(df, x=&quot;sales&quot;, y=&quot;profit&quot;, color=&quot;region&quot;)
+fig.show()</code></pre>
+<h3>Cheat note</h3>
+<ul>
+<li>Always label axes and title.</li>
+<li>For skewed data, histogram + box plot is a strong first pass.</li>
+</ul>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>5</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Linear Algebra for Data Science</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Linear Algebra for Data Science</h2>
+        </div>
+        <h3>Core pieces</h3>
+<ul>
+<li>scalar: single value</li>
+<li>vector: ordered list of values</li>
+<li>matrix: 2D grid of values</li>
+<li>tensor: higher-dimensional extension</li>
+</ul>
+<h3>Vector operations</h3>
+<pre><code>import numpy as np
+
+v1 = np.array([1, 2, 3])
+v2 = np.array([4, 5, 6])
+
+np.dot(v1, v2)         # dot product
+np.cross(v1, v2)       # cross product
+np.linalg.norm(v1)     # vector norm</code></pre>
+<h3>Matrix operations</h3>
+<pre><code>A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+
+A + B
+A - B
+A * 2
+A @ B
+A.T
+np.linalg.det(A)
+np.linalg.matrix_rank(A)
+np.eye(3)</code></pre>
+<h3>Why it matters in ML</h3>
+<ul>
+<li>features are vectors</li>
+<li>datasets are matrices</li>
+<li>distance, projection, optimization, and dimensionality reduction all rely on linear algebra</li>
+</ul>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>6</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Statistics Fundamentals</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Statistics Fundamentals</h2>
+        </div>
+        <h3>Types of statistics</h3>
+<ul>
+<li>descriptive statistics: summarize data</li>
+<li>inferential statistics: draw conclusions from samples</li>
+</ul>
+<h3>Types of data</h3>
+<ul>
+<li>categorical: labels or groups</li>
+<li>numerical: discrete or continuous</li>
+</ul>
+<h3>Measures of central tendency</h3>
+<pre><code>import numpy as np
+import statistics
+
+mean = np.mean(data)
+median = np.median(data)
+mode = statistics.mode(data)</code></pre>
+<ul>
+<li>mean: average</li>
+<li>median: middle value</li>
+<li>mode: most frequent value</li>
+</ul>
+<h3>Measures of dispersion</h3>
+<ul>
+<li>range = max - min</li>
+<li>variance = average squared spread</li>
+<li>standard deviation = square root of variance</li>
+<li>percentile = relative position in data</li>
+<li>quartiles split data into four parts</li>
+<li>IQR = Q3 - Q1</li>
+</ul>
+<pre><code>np.var(data)
+np.std(data)
+np.percentile(data, 25)
+np.percentile(data, 75)</code></pre>
+<h3>Distribution shape</h3>
+<ul>
+<li>skewness: asymmetry</li>
+<li>kurtosis: tail heaviness / peakedness</li>
+</ul>
+<h3>Cheat note</h3>
+<ul>
+<li>mean is sensitive to outliers</li>
+<li>median is safer for skewed data</li>
+<li>standard deviation is only meaningful with the mean when scale and spread matter together</li>
+</ul>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>7</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Probability and Distributions</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Probability and Distributions</h2>
+        </div>
+        <h3>Probability basics</h3>
+<pre><code>P(Event) = favorable outcomes / total outcomes
+0 &lt;= P(Event) &lt;= 1</code></pre>
+<h3>Important distributions from the course</h3>
+<ul>
+<li>Bernoulli: one trial, success/failure</li>
+<li>Binomial: number of successes in n independent trials</li>
+<li>Poisson: number of events in a fixed interval</li>
+<li>Normal: symmetric bell-shaped distribution</li>
+<li>Uniform: all values equally likely in an interval</li>
+</ul>
+<h3>Quick intuition</h3>
+<ul>
+<li>Bernoulli: one coin flip</li>
+<li>Binomial: count heads in 10 flips</li>
+<li>Poisson: number of calls per hour</li>
+<li>Normal: heights or many natural measurements</li>
+<li>Uniform: random number from 0 to 1</li>
+</ul>
+<h3>SciPy examples</h3>
+<pre><code>from scipy.stats import bernoulli, binom, poisson, norm, uniform
+
+binom.pmf(k=3, n=10, p=0.5)
+poisson.pmf(k=4, mu=3)
+norm.cdf(1.96)
+uniform.rvs(size=5)</code></pre>
+<h3>Cheat note</h3>
+<ul>
+<li>PMF: discrete probabilities</li>
+<li>PDF: continuous density</li>
+<li>CDF: probability up to a value</li>
+</ul>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>8</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Advanced Statistics and Hypothesis Testing</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Advanced Statistics and Hypothesis Testing</h2>
+        </div>
+        <h3>Key terms</h3>
+<ul>
+<li>population: full group</li>
+<li>sample: subset of the population</li>
+<li>parameter: population measure</li>
+<li>statistic: sample measure</li>
+</ul>
+<h3>Hypothesis testing flow</h3>
+<ol>
+<li>State null hypothesis <code>H0</code>.</li>
+<li>State alternative hypothesis <code>H1</code>.</li>
+<li>Choose significance level <code>alpha</code> such as 0.05.</li>
+<li>Select test statistic.</li>
+<li>Compute p-value.</li>
+<li>Reject or fail to reject <code>H0</code>.</li>
+</ol>
+<h3>Errors</h3>
+<ul>
+<li>Type I error: reject true null hypothesis</li>
+<li>Type II error: fail to reject false null hypothesis</li>
+</ul>
+<h3>Confidence interval and margin of error</h3>
+<pre><code>confidence interval = estimate +/- margin of error</code></pre>
+<ul>
+<li>higher confidence -&gt; wider interval</li>
+<li>larger sample -&gt; narrower interval</li>
+</ul>
+<h3>Z vs T</h3>
+<ul>
+<li>use Z-test when population std is known or sample is large</li>
+<li>use T-test when population std is unknown and sample is smaller</li>
+</ul>
+<h3>Common tests from the notebooks</h3>
+<ul>
+<li>one-sample t-test</li>
+<li>paired t-test</li>
+<li>two-sample t-test</li>
+<li>z-test</li>
+<li>chi-square test</li>
+<li>ANOVA / F-test</li>
+</ul>
+<h3>Python patterns</h3>
+<pre><code>from scipy.stats import ttest_1samp, chi2_contingency
+from statsmodels.stats.weightstats import ztest
+
+ttest_1samp(sample, popmean=50)
+ztest(sample, value=50)
+chi2_contingency(contingency_table)</code></pre>
+<h3>P-value decision rule</h3>
+<ul>
+<li>if <code>p &lt; alpha</code>: reject <code>H0</code></li>
+<li>if <code>p &gt;= alpha</code>: fail to reject <code>H0</code></li>
+</ul>
+<h3>Cheat note</h3>
+<ul>
+<li>&quot;Fail to reject&quot; does not prove <code>H0</code> is true.</li>
+<li>Statistical significance is not the same as business significance.</li>
+</ul>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>9</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Data Wrangling</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Data Wrangling</h2>
+        </div>
+        <h3>Goal</h3>
+<p>Turn raw data into analysis-ready data.</p>
+<h3>Typical workflow</h3>
+<ol>
+<li>Load data</li>
+<li>inspect structure</li>
+<li>fix missing values</li>
+<li>remove duplicates</li>
+<li>clean formats and types</li>
+<li>handle outliers</li>
+<li>reshape / join / aggregate</li>
+</ol>
+<h3>Inspection</h3>
+<pre><code>df.head()
+df.info()
+df.describe()
+df.duplicated().sum()
+df.isnull().sum()</code></pre>
+<h3>Missing data handling</h3>
+<pre><code>df.dropna()
+df.fillna(df.mean(numeric_only=True))
+df[&quot;city&quot;].fillna(df[&quot;city&quot;].mode()[0], inplace=True)</code></pre>
+<h3>Duplicates</h3>
+<pre><code>df.duplicated().sum()
+df.drop_duplicates(inplace=True)</code></pre>
+<h3>Outliers</h3>
+<ul>
+<li>detect with box plot, IQR, z-score</li>
+<li>treat by capping, winsorizing, transforming, or removing</li>
+</ul>
+<pre><code>from scipy.stats.mstats import winsorize
+
+df[&quot;income_capped&quot;] = winsorize(df[&quot;income&quot;], limits=[0.05, 0.05])</code></pre>
+<h3>Binning</h3>
+<pre><code>df[&quot;age_group&quot;] = pd.cut(df[&quot;age&quot;], bins=[0, 18, 35, 60, 100])</code></pre>
+<h3>Aggregation</h3>
+<pre><code>df.groupby(&quot;region&quot;)[&quot;sales&quot;].sum()
+df.pivot_table(values=&quot;sales&quot;, index=&quot;region&quot;, columns=&quot;product&quot;, aggfunc=&quot;mean&quot;)</code></pre>
+<h3>Reshaping</h3>
+<pre><code>pd.melt(df, id_vars=[&quot;id&quot;])
+df.pivot(index=&quot;date&quot;, columns=&quot;product&quot;, values=&quot;sales&quot;)</code></pre>
+<h3>Cheat note</h3>
+<ul>
+<li>Clean data before modeling.</li>
+<li>Always verify type conversions after importing CSV or Excel files.</li>
+</ul>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>10</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Feature Engineering</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Feature Engineering</h2>
+        </div>
+        <h3>Purpose</h3>
+<p>Create better inputs so the model can learn better patterns.</p>
+<h3>Common techniques from the course</h3>
+<ul>
+<li>transformation</li>
+<li>scaling</li>
+<li>encoding</li>
+<li>hashing</li>
+<li>grouping / aggregation</li>
+</ul>
+<h3>Transform skewed variables</h3>
+<pre><code>import numpy as np
+from scipy.stats import boxcox
+
+df[&quot;log_income&quot;] = np.log1p(df[&quot;income&quot;])
+df[&quot;sqrt_income&quot;] = np.sqrt(df[&quot;income&quot;])
+df[&quot;boxcox_income&quot;], lam = boxcox(df[&quot;income&quot;])</code></pre>
+<h3>Scaling</h3>
+<pre><code>from sklearn.preprocessing import MinMaxScaler
+
+scaler = MinMaxScaler()
+df[[&quot;age&quot;, &quot;income&quot;]] = scaler.fit_transform(df[[&quot;age&quot;, &quot;income&quot;]])</code></pre>
+<h3>Encoding</h3>
+<pre><code>from sklearn.preprocessing import LabelEncoder
+
+le = LabelEncoder()
+df[&quot;gender_label&quot;] = le.fit_transform(df[&quot;gender&quot;])
+
+one_hot = pd.get_dummies(df[&quot;city&quot;], prefix=&quot;city&quot;)
+df = pd.concat([df, one_hot], axis=1)</code></pre>
+<h3>Hashing</h3>
+<pre><code>import hashlib
+
+def hash_text(text):
+    return hashlib.md5(text.encode()).hexdigest()</code></pre>
+<h3>Group features</h3>
+<pre><code>region_sales = df.groupby(&quot;region&quot;)[&quot;sales&quot;].transform(&quot;mean&quot;)
+df[&quot;region_avg_sales&quot;] = region_sales</code></pre>
+<h3>Cheat note</h3>
+<ul>
+<li>Fit scalers and encoders on training data only.</li>
+<li>Feature engineering must avoid target leakage.</li>
+</ul>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>11</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Machine Learning Workflow</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Machine Learning Workflow</h2>
+        </div>
+        <h3>Standard pipeline</h3>
+<ol>
+<li>Define target variable.</li>
+<li>Split data into train and test sets.</li>
+<li>Preprocess features.</li>
+<li>Train model.</li>
+<li>Evaluate.</li>
+<li>Tune hyperparameters.</li>
+<li>Compare models.</li>
+</ol>
+<h3>Train-test split</h3>
+<pre><code>from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)</code></pre>
+<h3>Cross-validation</h3>
+<pre><code>from sklearn.model_selection import cross_val_score, KFold, StratifiedKFold
+
+scores = cross_val_score(model, X, y, cv=5)</code></pre>
+<h3>General rule</h3>
+<ul>
+<li>regression predicts numbers</li>
+<li>classification predicts classes</li>
+<li>clustering finds groups without labels</li>
+</ul>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>12</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Regression</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Regression</h2>
+        </div>
+        <h3>What regression does</h3>
+<p>Predicts continuous values such as price, revenue, demand, or temperature.</p>
+<h3>Main types covered</h3>
+<ul>
+<li>simple linear regression</li>
+<li>multiple linear regression</li>
+<li>polynomial regression</li>
+<li>Lasso regression</li>
+<li>Ridge regression</li>
+<li>Elastic Net regression</li>
+</ul>
+<h3>Linear regression pattern</h3>
+<pre><code>from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)
+
+mse = mean_squared_error(y_test, y_pred)
+mae = mean_absolute_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)</code></pre>
+<h3>Regression metrics</h3>
+<ul>
+<li>MSE: penalizes large errors strongly</li>
+<li>RMSE: square root of MSE, easier to interpret</li>
+<li>MAE: average absolute error</li>
+<li>R2: proportion of variance explained</li>
+</ul>
+<pre><code>RMSE = sqrt(MSE)</code></pre>
+<h3>Overfitting vs underfitting</h3>
+<ul>
+<li>underfitting: model too simple, poor train and test performance</li>
+<li>overfitting: model too complex, great train but poor test performance</li>
+</ul>
+<h3>Polynomial regression</h3>
+<pre><code>from sklearn.preprocessing import PolynomialFeatures
+
+poly = PolynomialFeatures(degree=2)
+X_poly = poly.fit_transform(X)</code></pre>
+<h3>Regularization</h3>
+<ul>
+<li>Lasso: can shrink some coefficients to zero</li>
+<li>Ridge: shrinks coefficients but rarely to zero</li>
+<li>Elastic Net: combination of L1 and L2</li>
+</ul>
+<pre><code>from sklearn.linear_model import Lasso, Ridge, ElasticNet</code></pre>
+<h3>Cheat note</h3>
+<ul>
+<li>Scale features for regularized models.</li>
+<li>Use cross-validation to choose regularization strength.</li>
+</ul>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>13</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Classification</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Classification</h2>
+        </div>
+        <h3>What classification does</h3>
+<p>Predicts categories such as yes/no, fraud/not fraud, class A/B/C.</p>
+<h3>Types from the course</h3>
+<ul>
+<li>binary classification</li>
+<li>multiclass classification</li>
+<li>multilabel classification</li>
+<li>imbalanced classification</li>
+</ul>
+<h3>Binary classification models covered</h3>
+<ul>
+<li>logistic regression</li>
+<li>naive Bayes</li>
+<li>K-nearest neighbors</li>
+<li>decision tree</li>
+<li>support vector machine</li>
+</ul>
+<h3>Logistic regression</h3>
+<pre><code>from sklearn.linear_model import LogisticRegression
+
+clf = LogisticRegression()
+clf.fit(X_train, y_train)
+y_pred = clf.predict(X_test)</code></pre>
+<h3>Classification metrics</h3>
+<ul>
+<li>accuracy = correct predictions / total predictions</li>
+<li>precision = TP / (TP + FP)</li>
+<li>recall = TP / (TP + FN)</li>
+<li>F1 = harmonic mean of precision and recall</li>
+<li>specificity = TN / (TN + FP)</li>
+<li>ROC-AUC measures ranking quality across thresholds</li>
+</ul>
+<pre><code>from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score
+
+print(classification_report(y_test, y_pred))
+print(confusion_matrix(y_test, y_pred))</code></pre>
+<h3>KNN intuition</h3>
+<ul>
+<li>class is based on nearest points</li>
+<li>sensitive to scaling</li>
+<li>choose <code>k</code> carefully</li>
+</ul>
+<h3>Naive Bayes intuition</h3>
+<ul>
+<li>fast and simple</li>
+<li>assumes conditional independence</li>
+<li>useful for text and baseline models</li>
+</ul>
+<h3>Decision tree intuition</h3>
+<ul>
+<li>easy to interpret</li>
+<li>can overfit without pruning or depth control</li>
+</ul>
+<h3>Multiclass classification</h3>
+<ul>
+<li>one of many classes</li>
+<li>examples: species, customer segment, product category</li>
+</ul>
+<h3>Multilabel classification</h3>
+<ul>
+<li>one item can belong to multiple classes</li>
+<li>examples: image tags, article topics</li>
+</ul>
+<h3>Imbalanced data handling</h3>
+<ul>
+<li>oversampling</li>
+<li>undersampling</li>
+<li>SMOTE</li>
+<li>class weights</li>
+<li>precision-recall curve</li>
+<li>balanced ensembles</li>
+</ul>
+<pre><code>from imblearn.over_sampling import SMOTE
+
+smote = SMOTE(random_state=42)
+X_resampled, y_resampled = smote.fit_resample(X_train, y_train)</code></pre>
+<h3>Cheat note</h3>
+<ul>
+<li>For imbalanced data, accuracy alone can be misleading.</li>
+<li>Precision-recall is often more useful than ROC when positives are rare.</li>
+</ul>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>14</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Ensemble Learning</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Ensemble Learning</h2>
+        </div>
+        <h3>Main idea</h3>
+<p>Combine multiple models to get better performance than a single model.</p>
+<h3>Categories</h3>
+<ul>
+<li>parallel methods: models train independently</li>
+<li>sequential methods: models learn from previous errors</li>
+</ul>
+<h3>Basic techniques</h3>
+<ul>
+<li>voting</li>
+<li>averaging</li>
+<li>weighted averaging</li>
+</ul>
+<h3>Voting classifier</h3>
+<pre><code>from sklearn.ensemble import VotingClassifier
+
+ensemble = VotingClassifier(
+    estimators=[
+        (&quot;lr&quot;, LogisticRegression()),
+        (&quot;dt&quot;, DecisionTreeClassifier()),
+        (&quot;svc&quot;, SVC(probability=True))
+    ],
+    voting=&quot;soft&quot;
+)</code></pre>
+<h3>Advanced methods</h3>
+<ul>
+<li>bagging</li>
+<li>random forest</li>
+<li>boosting</li>
+<li>stacking</li>
+</ul>
+<h3>Bagging</h3>
+<ul>
+<li>trains many models on bootstrap samples</li>
+<li>reduces variance</li>
+</ul>
+<h3>Boosting</h3>
+<ul>
+<li>trains models sequentially</li>
+<li>later models focus on previous mistakes</li>
+<li>examples from notes: AdaBoost, Gradient Boosting, XGBoost, CatBoost</li>
+</ul>
+<h3>Stacking</h3>
+<ul>
+<li>predictions from base models become input to a meta-model</li>
+</ul>
+<h3>Cheat note</h3>
+<ul>
+<li>bagging is usually good for unstable learners like trees</li>
+<li>boosting can perform very well but may overfit noisy data if not tuned</li>
+</ul>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>15</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Unsupervised Learning</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Unsupervised Learning</h2>
+        </div>
+        <h3>What it does</h3>
+<p>Learns structure from unlabeled data.</p>
+<h3>Main areas from the course</h3>
+<ul>
+<li>clustering</li>
+<li>dimensionality reduction</li>
+<li>association rule learning</li>
+<li>anomaly detection</li>
+</ul>
+<h3>K-means clustering</h3>
+<pre><code>from sklearn.cluster import KMeans
+
+kmeans = KMeans(n_clusters=3, random_state=42)
+labels = kmeans.fit_predict(X)</code></pre>
+<ul>
+<li>choose <code>k</code> using elbow method and silhouette score</li>
+</ul>
+<h3>Hierarchical clustering</h3>
+<ul>
+<li>builds nested clusters</li>
+<li>commonly visualized with dendrograms</li>
+<li>agglomerative: bottom-up</li>
+<li>divisive: top-down</li>
+</ul>
+<h3>DBSCAN</h3>
+<ul>
+<li>density-based clustering</li>
+<li>can detect noise points</li>
+<li>useful when clusters are irregular</li>
+</ul>
+<h3>Silhouette score</h3>
+<ul>
+<li>measures how well a point fits its cluster</li>
+<li>closer to 1 is better</li>
+</ul>
+<pre><code>from sklearn.metrics import silhouette_score
+silhouette_score(X, labels)</code></pre>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>16</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Dimensionality Reduction, Association Rules, and Anomaly Detection</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Dimensionality Reduction, Association Rules, and Anomaly Detection</h2>
+        </div>
+        <h3>Why reduce dimensions</h3>
+<ul>
+<li>faster training</li>
+<li>less noise</li>
+<li>easier visualization</li>
+<li>reduces multicollinearity</li>
+</ul>
+<h3>PCA</h3>
+<ul>
+<li>unsupervised feature extraction</li>
+<li>finds directions of maximum variance</li>
+</ul>
+<pre><code>from sklearn.decomposition import PCA
+
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X_scaled)</code></pre>
+<h3>LDA</h3>
+<ul>
+<li>supervised dimensionality reduction</li>
+<li>tries to separate classes well</li>
+</ul>
+<pre><code>from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA</code></pre>
+<h3>t-SNE</h3>
+<ul>
+<li>mainly for visualization of high-dimensional data</li>
+<li>preserves local neighborhoods</li>
+</ul>
+<pre><code>from sklearn.manifold import TSNE</code></pre>
+<h3>Association rules</h3>
+<ul>
+<li>finds items that occur together</li>
+<li>common in market basket analysis</li>
+</ul>
+<p>Key measures:</p>
+<ul>
+<li>support: how often itemset appears</li>
+<li>confidence: how often rule is correct</li>
+<li>lift: strength of rule beyond random chance</li>
+</ul>
+<pre><code>from mlxtend.frequent_patterns import apriori, association_rules</code></pre>
+<h3>Anomaly detection</h3>
+<ul>
+<li>finds rare or unusual patterns</li>
+</ul>
+<pre><code>from sklearn.ensemble import IsolationForest
+
+iso = IsolationForest(random_state=42)
+pred = iso.fit_predict(X)</code></pre>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>17</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Recommendation Systems</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Recommendation Systems</h2>
+        </div>
+        <h3>Goal</h3>
+<p>Suggest items users are likely to prefer.</p>
+<h3>Main types from the course</h3>
+<ul>
+<li>collaborative filtering</li>
+<li>content-based filtering</li>
+<li>hybrid systems</li>
+</ul>
+<h3>Collaborative filtering</h3>
+<ul>
+<li>uses user-item interactions</li>
+<li>user-based: similar users</li>
+<li>item-based: similar items</li>
+<li>model-based: matrix factorization such as SVD</li>
+</ul>
+<h3>Cosine similarity</h3>
+<pre><code>from sklearn.metrics.pairwise import cosine_similarity</code></pre>
+<ul>
+<li>larger cosine similarity means more similar behavior or items</li>
+</ul>
+<h3>SVD pattern</h3>
+<pre><code>from scipy.sparse.linalg import svds</code></pre>
+<ul>
+<li>factorizes user-item matrix into lower-dimensional components</li>
+<li>useful for latent preferences</li>
+</ul>
+<h3>Content-based filtering</h3>
+<ul>
+<li>recommends items similar to what the user liked before</li>
+<li>based on item features instead of only ratings</li>
+</ul>
+<h3>Hybrid filtering</h3>
+<ul>
+<li>combines collaborative and content-based methods</li>
+<li>usually stronger in real systems</li>
+</ul>
+<h3>Evaluation ideas</h3>
+<ul>
+<li>RMSE for rating prediction</li>
+<li>hit rate / top-N relevance for ranking style systems</li>
+</ul>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>18</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Lab, Project, and Capstone Pattern</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Lab, Project, and Capstone Pattern</h2>
+        </div>
+        <h3>Repeated project structure in the docs</h3>
+<ol>
+<li>Understand the business problem.</li>
+<li>Load the dataset.</li>
+<li>Inspect columns and data quality.</li>
+<li>Clean missing values and duplicates.</li>
+<li>Explore patterns visually.</li>
+<li>Engineer useful features.</li>
+<li>Train an appropriate model.</li>
+<li>Evaluate with the right metric.</li>
+<li>Summarize findings in plain language.</li>
+</ol>
+<h3>When doing a capstone, ask these first</h3>
+<ul>
+<li>What is the target variable?</li>
+<li>Is this regression, classification, clustering, or recommendation?</li>
+<li>Are classes balanced?</li>
+<li>Do I need scaling?</li>
+<li>Are there missing values or outliers?</li>
+<li>Which metric matches the business goal?</li>
+</ul>
+<h3>Fast checklist before submitting</h3>
+<ul>
+<li>no obvious null handling mistakes</li>
+<li>no data leakage</li>
+<li>train/test split done correctly</li>
+<li>metric matches problem type</li>
+<li>charts are labeled</li>
+<li>conclusion explains business meaning</li>
+</ul>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>19</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Quick Problem-to-Tool Map</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Quick Problem-to-Tool Map</h2>
+        </div>
+        <h3>If your problem is...</h3>
+<ul>
+<li>Predict sales or price -&gt; regression</li>
+<li>Predict churn or fraud -&gt; classification</li>
+<li>Group similar customers -&gt; clustering</li>
+<li>Reduce many features -&gt; PCA or LDA</li>
+<li>Recommend movies or products -&gt; recommendation system</li>
+<li>Find rare suspicious cases -&gt; anomaly detection</li>
+<li>Clean messy real-world data -&gt; pandas + data wrangling</li>
+</ul>
+<h3>If your data issue is...</h3>
+<ul>
+<li>missing values -&gt; <code>fillna()</code>, imputation</li>
+<li>duplicate rows -&gt; <code>drop_duplicates()</code></li>
+<li>skewed numeric feature -&gt; <code>log1p</code>, <code>sqrt</code>, <code>boxcox</code></li>
+<li>categorical text labels -&gt; encoding</li>
+<li>too many features -&gt; PCA / feature selection</li>
+<li>class imbalance -&gt; SMOTE / class weighting / PR curve</li>
+</ul>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>20</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Must-Remember Formulas</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Must-Remember Formulas</h2>
+        </div>
+        <pre><code>Mean = sum(x) / n
+Range = max - min
+Variance = average squared deviation from the mean
+Standard deviation = sqrt(variance)
+IQR = Q3 - Q1
+Probability = favorable / total
+Accuracy = (TP + TN) / total
+Precision = TP / (TP + FP)
+Recall = TP / (TP + FN)
+F1 = 2 * Precision * Recall / (Precision + Recall)
+RMSE = sqrt(MSE)
+R2 = explained variance ratio</code></pre>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>21</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Exam and Revision Tips</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Exam and Revision Tips</h2>
+        </div>
+        <ul>
+<li>Know the difference between <code>loc</code> and <code>iloc</code>.</li>
+<li>Know when to use mean vs median.</li>
+<li>Know the difference between regression and classification.</li>
+<li>Know why scaling matters for KNN, SVM, and regularized models.</li>
+<li>Know why accuracy can fail on imbalanced datasets.</li>
+<li>Know the difference between bagging and boosting.</li>
+<li>Know the difference between PCA and LDA.</li>
+<li>Know the difference between collaborative and content-based recommendations.</li>
+</ul>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>22</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Minimal End-to-End ML Skeleton</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Minimal End-to-End ML Skeleton</h2>
+        </div>
+        <pre><code>import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report
+
+df = pd.read_csv(&quot;data.csv&quot;)
+
+X = df.drop(columns=[&quot;target&quot;])
+y = df[&quot;target&quot;]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+pipe = Pipeline([
+    (&quot;scale&quot;, StandardScaler()),
+    (&quot;model&quot;, LogisticRegression())
+])
+
+pipe.fit(X_train, y_train)
+y_pred = pipe.predict(X_test)
+
+print(classification_report(y_test, y_pred))</code></pre>
+<hr class="section-rule">
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>23</span>
+      </div>
+    </section>
+
+
+    <section class="sheet">
+      <div class="sheet-header">
+        <div class="sheet-brand">Beginner's AI & ML</div>
+        <div class="sheet-title">Cheat Sheet - Final Memory Hooks</div>
+      </div>
+      <div class="sheet-body">
+        <div class="section-intro">
+          <h2>Final Memory Hooks</h2>
+        </div>
+        <ul>
+<li>NumPy = arrays</li>
+<li>pandas = tables</li>
+<li>seaborn = easy plots</li>
+<li>statistics = summarize data</li>
+<li>probability = uncertainty</li>
+<li>hypothesis testing = evidence for decisions</li>
+<li>wrangling = clean before modeling</li>
+<li>feature engineering = improve inputs</li>
+<li>regression = predict numbers</li>
+<li>classification = predict labels</li>
+<li>clustering = find hidden groups</li>
+<li>ensemble = combine models</li>
+<li>recommendation = personalize choices</li>
+</ul>
+      </div>
+      <div class="sheet-footer">
+        <span>Simplilearn AI and Machine Learning Cheat Sheet</span>
+        <span>24</span>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+As a customer, I want to log in using my email and password so that I can access my account.
