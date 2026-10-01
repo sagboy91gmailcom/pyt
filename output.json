@@ -1,0 +1,39 @@
+{
+    "requirement": "As a customer, I want to log in using my email and password so that I can access my account.",
+    "positive_test_cases": [
+        {
+            "id": "P1",
+            "description": "Login with valid email and valid password",
+            "expected_result": "Login should be successful"
+        },
+        {
+            "id": "P2",
+            "description": "User logs in with valid credentials",
+            "expected_result": "User should be redirected to account page after successful login"
+        }
+    ],
+    "negative_test_cases": [
+        {
+            "id": "N1",
+            "description": "Login with invalid email and valid password",
+            "expected_result": "Login should not be successful"
+        },
+        {
+            "id": "N2",
+            "description": "Login with valid email and invalid password",
+            "expected_result": "Login should not be successful"
+        }
+    ],
+    "edge_test_cases": [
+        {
+            "id": "E1",
+            "description": "Login with leading and trailing spaces in email",
+            "expected_result": "Should show error"
+        },
+        {
+            "id": "E2",
+            "description": "Login with password containing special characters",
+            "expected_result": "Should show Error"
+        }
+    ]
+}
