@@ -3,8 +3,7 @@
     "positive_test_cases": [
         {
             "id": "P1",
-            "description": "Login with valid email and valid password",
-            "expected_result": "Login should be successful"
+            "description": "Login with valid email and valid password"
         },
         {
             "id": "P2",

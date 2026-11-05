@@ -2,6 +2,7 @@
 #   - I want to use Pythons built-in JSON library
 #   - WE need this because our project save the data into a json file
 import json
+import csv
 
 #Read requiremtnt from file
 #   - open(...) opens the file
@@ -22,7 +23,7 @@ data1= {'requirement':requirement_text,
                 {
                         "id": "P1",
                         "description": "Login with valid email and valid password",
-                        "expected_result": "Login should be successful"
+                        #"expected_result": ""
                 },
                 {
                         "id": "P2",
@@ -74,14 +75,13 @@ with open ("output.json","w") as file:
 
 
 #creating a resuable function named printtc that accepts a heading and a list of test cases.
-def printtc(heading, test_cases):
+def print_test_cases(heading, test_cases):
       #print heading and count here:\
       print(heading,':', len(test_cases))
 
       #loop through test_cases here
       for test_case in test_cases:
-        print(f"{test_case['id']} - {test_case['description']},\nExpected Result : {test_case['expected_result']}\n")
-     
+        print(f"{test_case.get("id", "")} - {test_case.get("description", "")},\nExpected Result : {test_case.get("expected_result", "")}\n")
 
 
 #Validation function
@@ -117,10 +117,29 @@ def validate_test_cases(heading,test_cases):
 #add loop to print test cases
 for heading, test_cases in test_case_groups.items():
      #call print_test_cases here:
-    printtc(heading, test_cases)
+    print_test_cases(heading, test_cases)
 
 #Add loop to validate test groups
 for heading, test_cases in test_case_groups.items():
     #call validate_test_cases here:
     validate_test_cases(heading, test_cases)
 
+def export_to_csv(groups):
+    # open test_cases.csv in write mode
+    with open("test_cases.csv", "w", newline="") as file:
+
+    # create csv writer
+        writer = csv.writer(file)
+
+    # write 4 header row
+        writer.writerow(['category', 'id', 'description', 'expected_result'])
+
+    # loop through each category
+        for heading,test_cases in groups.items():
+            #loop each test cases of each category
+            for test_case in test_cases:
+                writer.writerow([heading,test_case.get("id", ""),test_case.get("description", ""),test_case.get("expected_result", "")])
+
+export_to_csv(test_case_groups)
+
+ 

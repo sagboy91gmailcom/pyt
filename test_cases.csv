@@ -1,0 +1,7 @@
+category,id,description,expected_result
+Positive Test Cases,P1,Login with valid email and valid password,
+Positive Test Cases,P2,User logs in with valid credentials,User should be redirected to account page after successful login
+Negative Test Cases,N1,Login with invalid email and valid password,Login should not be successful
+Negative Test Cases,N2,Login with valid email and invalid password,Login should not be successful
+Edge Test Cases,E1,Login with leading and trailing spaces in email,Should show error
+Edge Test Cases,E2,Login with password containing special characters,Should show Error
